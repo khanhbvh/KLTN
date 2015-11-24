@@ -1,0 +1,4 @@
+﻿- cài .net3.5
+- cài 1 http://www.videohelp.com/download/My%20MP4Box%20GUI%20v0.6.0.6.7z
+- cài 2 http://nchc.dl.sourceforge.net/project/codeblocks/Binaries/13.12/Windows/codeblocks-13.12mingw-setup.exe
+- copy toàn bộ nội dung trong 2 dán vào thư mục tool của 1.

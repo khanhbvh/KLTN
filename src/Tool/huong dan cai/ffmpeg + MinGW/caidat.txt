@@ -1,0 +1,13 @@
+﻿- tải ffmpeg: http://ffmpeg.org/releases/ffmpeg-2.8.1.tar.bz2
+- cài 2: http://ncu.dl.sourceforge.net/project/mingw/Installer/mingw-get-setup.exe
+
+- cài 3: http://nchc.dl.sourceforge.net/project/mingw/MSYS/Base/msys-core/msys-1.0.11/MSYS-1.0.11.exe
+
+- copy 3 vào 2.
+- cài đặt codeblock: http://nchc.dl.sourceforge.net/project/codeblocks/Binaries/13.12/Windows/codeblocks-13.12mingw-setup.exe
+thực hiện lệnh như clip bên dưới.
+https://www.youtube.com/watch?v=3yhkX0uaQGk
+
+-- nếu ko thành công thì tải bản này:
+http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20151022-git-a7c5005-win64-static.7z
+(đối vs bản này thì ko cần làm các bước kia)
