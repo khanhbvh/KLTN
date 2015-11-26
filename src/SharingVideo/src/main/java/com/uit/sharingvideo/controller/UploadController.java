@@ -21,7 +21,7 @@ public class UploadController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@Autowired
-	UploadMap upload;
+	UploadMap uploadMap;
 	
 	@RequestMapping(value={"/",""},method=RequestMethod.GET)
 	public ModelAndView upload() { 
@@ -36,7 +36,7 @@ public class UploadController {
 				
 				byte[] bytes = file.getBytes();
 				File File = new File(file.getOriginalFilename());
-				upload.UploadVideo(bytes, File);
+				uploadMap.UploadVideo(bytes, File);
 				String t = "Success Upload";
 				
 				return  t;

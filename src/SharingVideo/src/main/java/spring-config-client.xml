@@ -30,7 +30,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 <property name="serviceInterface" value="com.uit.sharingvideo.services.CommentService"/>
 </bean>
  
-<bean id="UploadService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+<bean id="uploadService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
 <property name="serviceUrl" value="rmi://localhost:1099/uploadService"/>
 <property name="serviceInterface" value="com.uit.sharingvideo.services.UploadService"/>
 </bean>
