@@ -5,14 +5,6 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
--- -----------------------------------------------------
 -- Schema sharingvideodb
 -- -----------------------------------------------------
 
@@ -20,7 +12,7 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_gener
 -- Schema sharingvideodb
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `sharingvideodb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+USE `sharingvideodb` ;
 
 -- -----------------------------------------------------
 -- Table `sharingvideodb`.`category`
@@ -33,25 +25,6 @@ CREATE TABLE IF NOT EXISTS `sharingvideodb`.`category` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-
--- -----------------------------------------------------
--- Table `mydb`.`Type`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Type` (
-  `TypeId` INT NOT NULL AUTO_INCREMENT COMMENT '',
-  `TypeName` VARCHAR(100) NOT NULL COMMENT '',
-  `TypeDes` LONGTEXT NULL COMMENT '',
-  `CategoryId` INT(11) NOT NULL COMMENT '',
-  PRIMARY KEY (`TypeId`, `CategoryId`)  COMMENT '',
-  INDEX `fk_Type_category_idx` (`CategoryId` ASC)  COMMENT '',
-  CONSTRAINT `fk_Type_category`
-    FOREIGN KEY (`CategoryId`)
-    REFERENCES `sharingvideodb`.`category` (`CategoryId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-USE `sharingvideodb` ;
 
 -- -----------------------------------------------------
 -- Table `sharingvideodb`.`user`
@@ -73,12 +46,31 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
+-- Table `sharingvideodb`.`Type`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `sharingvideodb`.`Type` (
+  `TypeId` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `CategoryId` INT(11) NOT NULL COMMENT '',
+  `TypeName` VARCHAR(100) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL COMMENT '',
+  `TypeDes` LONGTEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL COMMENT '',
+  PRIMARY KEY (`TypeId`, `CategoryId`)  COMMENT '',
+  INDEX `fk_Type_category1_idx` (`CategoryId` ASC)  COMMENT '',
+  CONSTRAINT `fk_Type_category1`
+    FOREIGN KEY (`CategoryId`)
+    REFERENCES `sharingvideodb`.`category` (`CategoryId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `sharingvideodb`.`video`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sharingvideodb`.`video` (
   `VideoId` INT(11) NOT NULL AUTO_INCREMENT COMMENT '',
-  `TypeId` INT NOT NULL COMMENT '',
   `UserId` INT(11) NOT NULL COMMENT '',
+  `TypeId` INT NOT NULL COMMENT '',
+  `CategoryId` INT(11) NOT NULL COMMENT '',
   `Title` VARCHAR(200) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL COMMENT '',
   `FilePath` VARCHAR(200) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL COMMENT '',
   `Size` MEDIUMINT(9) NULL DEFAULT NULL COMMENT '',
@@ -88,17 +80,17 @@ CREATE TABLE IF NOT EXISTS `sharingvideodb`.`video` (
   `NumLike` INT(11) NULL DEFAULT NULL COMMENT '',
   `NumShare` INT(11) NULL DEFAULT NULL COMMENT '',
   `Img` VARCHAR(100) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL DEFAULT NULL COMMENT '',
-  PRIMARY KEY (`VideoId`, `TypeId`, `UserId`)  COMMENT '',
-  INDEX `fk_video_Type1_idx` (`TypeId` ASC)  COMMENT '',
+  PRIMARY KEY (`VideoId`, `UserId`, `TypeId`, `CategoryId`)  COMMENT '',
   INDEX `fk_video_user1_idx` (`UserId` ASC)  COMMENT '',
-  CONSTRAINT `fk_video_Type1`
-    FOREIGN KEY (`TypeId`)
-    REFERENCES `mydb`.`Type` (`TypeId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+  INDEX `fk_video_Type1_idx` (`TypeId` ASC, `CategoryId` ASC)  COMMENT '',
   CONSTRAINT `fk_video_user1`
     FOREIGN KEY (`UserId`)
     REFERENCES `sharingvideodb`.`user` (`UserId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_video_Type1`
+    FOREIGN KEY (`TypeId` , `CategoryId`)
+    REFERENCES `sharingvideodb`.`Type` (`TypeId` , `CategoryId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
