@@ -1,0 +1,22 @@
+package com.uit.sharingvideo.services;
+
+import java.util.List;
+
+import com.uit.sharingvideo.dao.VideoDaoImpl;
+import com.uit.sharingvideo.domain.Video;
+
+public class VideoServiceImpl implements VideoService{
+	VideoDaoImpl videodao = new VideoDaoImpl();
+	
+	@Override
+	public List<Video> getVideoListByCatalog(Integer categoryID) {
+		// TODO Auto-generated method stub
+		return videodao.getVideoListByCatalog(categoryID);
+	}
+
+	@Override
+	public List<Video> getTopVideoByCatalog(Integer catalogID, int top, String colOrder){
+		return videodao.getTopVideoByCatalog(catalogID, top, colOrder);
+	}
+
+}

@@ -14,6 +14,28 @@
             <div class="recommended-info">
                 <h3>Recent Videos</h3>
             </div>
+            
+            <%-- <c:forEach var="video" items="${map.videoList}">
+			    <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
+	                <div class="resent-grid-img recommended-grid-img">
+	                    <a href="single.html"><img src="<c:url value="/resources/images/${video.img}"/>" alt="" /></a>
+	                    <div class="time">
+	                        <p>3:04</p>
+	                    </div>
+	                    <div class="clck">
+	                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+	                    </div>
+	                </div>
+	                <div class="resent-grid-info recommended-grid-info">
+	                    <h3><a href="single.html" class="title title-info">${video.title}</a></h3>
+	                    <ul>
+	                        <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+	                        <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+	                    </ul>
+	                </div>
+            	</div>
+			</c:forEach> --%>
+            
             <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
                 <div class="resent-grid-img recommended-grid-img">
                     <a href="single.html"><img src="<c:url value="/resources/images/t1.jpg"/>" alt="" /></a>

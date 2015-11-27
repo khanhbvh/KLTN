@@ -74,8 +74,8 @@ CREATE TABLE IF NOT EXISTS `sharingvideodb`.`video` (
   `Title` VARCHAR(200) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL COMMENT '',
   `FilePath` VARCHAR(200) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL COMMENT '',
   `Size` MEDIUMINT(9) NULL DEFAULT NULL COMMENT '',
-  `Description` LONGTEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL DEFAULT NULL COMMENT '',
-  `DateCreate` DATE NOT NULL COMMENT '',
+  `Description` LONGTEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL COMMENT '',
+  `DateCreate` DATETIME NOT NULL COMMENT '',
   `NumView` INT NULL COMMENT '',
   `NumLike` INT(11) NULL DEFAULT NULL COMMENT '',
   `NumShare` INT(11) NULL DEFAULT NULL COMMENT '',
@@ -130,7 +130,7 @@ COLLATE = utf8_unicode_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sharingvideodb`.`recentlyviewed` (
   `UserId` INT(11) NOT NULL COMMENT '',
-  `Viewed_date` DATE NOT NULL COMMENT '',
+  `Viewed_date` DATETIME NOT NULL COMMENT '',
   `VideoId` INT(11) NOT NULL COMMENT '',
   PRIMARY KEY (`UserId`, `VideoId`)  COMMENT '',
   INDEX `fk_RECENTLYVIEWED_Video1_idx` (`VideoId` ASC)  COMMENT '',

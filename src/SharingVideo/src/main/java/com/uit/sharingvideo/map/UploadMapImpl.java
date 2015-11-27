@@ -12,5 +12,4 @@ public class UploadMapImpl implements UploadMap {
 		con.Connect_UploadService().UploadVideo(in, file);
 	}
 	
-
 }

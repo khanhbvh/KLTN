@@ -19,6 +19,7 @@ public class CommentDaoImpl implements CommentDao {
 		connect = new ConnectDataBase();
 		this.dataSource = connect.connect();
 	}
+	
 	@Override
 	public void insertData(Comment comment) {
 		 

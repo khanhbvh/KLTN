@@ -56,25 +56,4 @@ public class Connect {
 		VideoService videoService = (VideoService)context.getBean("videoService");
 		return videoService;
 	}
-/*	public CommentService Connect_CommentService()
-	{
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config-client.xml");
-		CommentService commentService = (CommentService)context.getBean("CommentService");
-		return commentService;
-	}
-	
-	
-	public CommentService Connect_CommentService()
-	{
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config-client.xml");
-		CommentService commentService = (CommentService)context.getBean("CommentService");
-		return commentService;
-	}
-	
-	public CommentService Connect_CommentService()
-	{
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config-client.xml");
-		CommentService commentService = (CommentService)context.getBean("CommentService");
-		return commentService;
-	}*/
 }
