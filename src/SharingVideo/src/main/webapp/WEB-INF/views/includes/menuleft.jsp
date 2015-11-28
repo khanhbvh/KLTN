@@ -17,7 +17,7 @@
             <li><a href="<c:url value='/history'/>" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>Lịch sử</a></li>
             <li><a href="#" class="menu1"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Phim<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
             <ul class="cl-effect-2">
-                <li><a href="<c:url value='/movies'/>">Việt nam</a></li>
+                <li><a href="<c:url value='/movies/vietnam'/>">Việt nam</a></li>
                 <li><a href="<c:url value='/movies'/>">Âu - Mỹ</a></li>
                 <li><a href="<c:url value='/movies'/>">Ấn độ</a></li>
             </ul>
