@@ -39,6 +39,6 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 <!-- port 1098 cho encode -->
 <bean id="uploadService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
 <property name="serviceUrl" value="rmi://localhost:1098/uploadService"/>
-<property name="serviceInterface" value="com.uit.sharingvideo.encode.UploadService"/>
+<property name="serviceInterface" value="com.uit.sharingvideo.services.UploadService"/>
 </bean>
 </beans>
