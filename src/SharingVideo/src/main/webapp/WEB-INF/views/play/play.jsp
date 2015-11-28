@@ -4,17 +4,17 @@
 
 <!-- menu left decorator -->
 <%@ include file="/WEB-INF/views/includes/menuleft.jsp"%>
+
 <script src="<c:url value="/resources/js/videojs/video.js" />"></script>
 <script src="<c:url value="/resources/js/videojs/dash.all.js" />"></script>
-<link href="<c:url value="/resources/css/videojs/video-js.css" />"
-	rel="stylesheet">
+<link href="<c:url value="/resources/css/videojs/video-js.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/videojs/videojs-dash.js" />"></script>
 <script src="https://apis.google.com/js/plusone.js"></script>
 <!-- body decorator -->
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-	
-	<input id="edge" value="<c:url value="${path.linkmpdForEgle}"/>" /> 
-	<input id="others" value="<c:url value="${path.linkmpdChrFfIe}"/>" />
+
+	<input id="edge" value="<c:url value="${path.linkmpdForEgle}"/>" /> <input
+		id="others" value="<c:url value="${path.linkmpdChrFfIe}"/>" />
 	<video id="videoplayer" class="video-js vjs-default-skin" controls
 		width="1000px" height="565px" preload="auto">
 		<source id="browser" src="${path.linkmpdForEgle}"
@@ -56,8 +56,8 @@
 		// Initalize the video.js player after videojs-contrib-dash has loaded
 		var myPlayer = videojs('videoplayer');
 	</script>
-	
-	
+
+
 	<div class="show-top-grids">
 		<div class="col-sm-8 single-left">
 			<div class="song">

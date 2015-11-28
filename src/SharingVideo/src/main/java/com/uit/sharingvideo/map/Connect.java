@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.uit.sharingvideo.services.CommentService;
 import com.uit.sharingvideo.services.LinkMpdService;
-import com.uit.sharingvideo.services.UploadService;
+import com.uit.sharingvideo.encode.*;
 
 import test.test;
 import test.test2;

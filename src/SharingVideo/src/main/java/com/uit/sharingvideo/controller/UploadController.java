@@ -12,7 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.uit.sharingvideo.map.UploadMap;
-import com.uit.sharingvideo.services.UploadService;
 
 @Controller("UploadController")
 @RequestMapping(value = "/upload")
@@ -35,8 +34,8 @@ public class UploadController {
 			try {
 				
 				byte[] bytes = file.getBytes();
-				File File = new File(file.getOriginalFilename());
-				uploadMap.UploadVideo(bytes, File);
+				String name  = file.getOriginalFilename();
+				uploadMap.UploadVideo(bytes, name);
 				String t = "Success Upload";
 				
 				return  t;
