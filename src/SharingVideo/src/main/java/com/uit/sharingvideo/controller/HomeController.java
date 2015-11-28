@@ -28,10 +28,18 @@ public class HomeController {
 	 */
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
 	public ModelAndView home(Locale locale) {
-		List<Video> videoList = videoMap.getVideoListByCatalog(1);
+		List<Video> recentVideoList = videoMap.getVideos(0, 6, "DateCreate");
+		List<Video> viewMostVideoList1 = videoMap.getVideos(0, 4, "NumView");
+		List<Video> viewMostVideoList2 = videoMap.getVideos(4, 4, "NumView");
+		List<Video> viewMostVideoList3 = videoMap.getVideos(8, 4, "NumView");
+		List<Video> viewMostVideoList4 = videoMap.getVideos(12, 4, "NumView");
 		
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("videoList", videoList);
+		map.put("recentVideoList", recentVideoList);
+		map.put("viewMostVideoList1", viewMostVideoList1);
+		map.put("viewMostVideoList2", viewMostVideoList2);
+		map.put("viewMostVideoList3", viewMostVideoList3);
+		map.put("viewMostVideoList4", viewMostVideoList4);
 		
 		return new ModelAndView("home/home", "map", map);
 	}
