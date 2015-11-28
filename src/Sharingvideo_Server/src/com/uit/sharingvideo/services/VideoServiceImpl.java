@@ -15,8 +15,8 @@ public class VideoServiceImpl implements VideoService{
 	}
 
 	@Override
-	public List<Video> getTopVideoByCatalog(Integer catalogID, int top, String colOrder){
-		return videodao.getTopVideoByCatalog(catalogID, top, colOrder);
+	public List<Video> getTopVideo(String colWhere, Integer catalogID, int top, String colOrder){
+		return videodao.getTopVideo(colWhere, catalogID, top, colOrder);
 	}
 
 }

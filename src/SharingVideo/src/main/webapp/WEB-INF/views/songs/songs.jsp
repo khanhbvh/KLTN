@@ -19,26 +19,10 @@
                     <div class="clearfix"> </div>
                 </div>
                 
-                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-	                
+                <c:forEach var="newestVideo" items="${map.newestVideoList}">
 	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
+	                        <a href="single.html"><img src="<c:url value="/resources/images/${newestVideo.img}"/>" alt="" /></a>
 	                        <div class="time small-time sports-tome">
 	                            <p>7:30</p>
 	                        </div>
@@ -47,76 +31,13 @@
 	                        </div>
 	                    </div>
 	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+	                        <h5><a href="single.html" class="title">${newestVideo.title}</a></h5>
 	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
+	                        <p class="views">${newestVideo.numView} views</p>
 	                    </div>
 	                </div>
-	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-	                
+				</c:forEach>
+				
                 <div class="clearfix"> </div>
             </div>
         </div>
@@ -132,42 +53,11 @@
                     </div>
                     <div class="clearfix"> </div>
                 </div>
-                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-	                
+                
+                <c:forEach var="popVideo" items="${map.popVideoList}">
 	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
+	                        <a href="single.html"><img src="<c:url value="/resources/images/${popVideo.img}"/>" alt="" /></a>
 	                        <div class="time small-time sports-tome">
 	                            <p>7:30</p>
 	                        </div>
@@ -176,59 +66,12 @@
 	                        </div>
 	                    </div>
 	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+	                        <h5><a href="single.html" class="title">${popVideo.title}</a></h5>
 	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
+	                        <p class="views">${popVideo.numView} views</p>
 	                    </div>
 	                </div>
-	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
+				</c:forEach>
 				
                 <div class="clearfix"> </div>
             </div>
@@ -245,42 +88,11 @@
                     </div>
                     <div class="clearfix"> </div>
                 </div>
-                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-               <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-	                
+                
+                <c:forEach var="hiphopVideo" items="${map.hiphopVideoList}">
 	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
+	                        <a href="single.html"><img src="<c:url value="/resources/images/${hiphopVideo.img}"/>" alt="" /></a>
 	                        <div class="time small-time sports-tome">
 	                            <p>7:30</p>
 	                        </div>
@@ -289,14 +101,33 @@
 	                        </div>
 	                    </div>
 	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+	                        <h5><a href="single.html" class="title">${hiphopVideo.title}</a></h5>
 	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
+	                        <p class="views">${hiphopVideo.numView} views</p>
 	                    </div>
 	                </div>
+				</c:forEach>
+				
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        
+        <div class="recommended">
+            <div class="recommended-grids">
+                <div class="recommended-info">
+                    <div class="heading">
+                        <h3>Top Nhạc Jazz</h3>
+                    </div>
+                    <div class="heading-right">
+                        <a href="#small-dialog8" class="play-icon popup-with-zoom-anim">Phát tất cả</a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                
+                <c:forEach var="jazzVideo" items="${map.jazzVideoList}">
 	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
+	                        <a href="single.html"><img src="<c:url value="/resources/images/${jazzVideo.img}"/>" alt="" /></a>
 	                        <div class="time small-time sports-tome">
 	                            <p>7:30</p>
 	                        </div>
@@ -305,43 +136,12 @@
 	                        </div>
 	                    </div>
 	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+	                        <h5><a href="single.html" class="title">${jazzVideo.title}</a></h5>
 	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
+	                        <p class="views">${jazzVideo.numView} views</p>
 	                    </div>
 	                </div>
-	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
-	                <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-	                    <div class="resent-grid-img recommended-grid-img">
-	                        <a href="single.html"><img src="<c:url value="/resources/images/test1.jpg"/>" alt="" /></a>
-	                        <div class="time small-time sports-tome">
-	                            <p>7:30</p>
-	                        </div>
-	                        <div class="clck sports-clock">
-	                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-	                        </div>
-	                    </div>
-	                    <div class="resent-grid-info recommended-grid-info">
-	                        <h5><a href="single.html" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
-	                        <p class="author"><a href="#" class="author">John Maniya</a></p>
-	                        <p class="views">0 views</p>
-	                    </div>
-	                </div>
+				</c:forEach>
 				
                 <div class="clearfix"> </div>
             </div>

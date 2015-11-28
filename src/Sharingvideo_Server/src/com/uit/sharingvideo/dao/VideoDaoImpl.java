@@ -29,12 +29,12 @@ public class VideoDaoImpl implements VideoDao{
 	}
 	
 	@Override
-	public List<Video> getTopVideoByCatalog(Integer catalogID, int top, String colOrder){
+	public List<Video> getTopVideo(String colWhere, Integer catalogID, int top, String colOrder){
 		List<Video> videoList = new ArrayList<Video>();
 		
 		String sql = "select * "
 				+ "from video "
-				+ "where CategoryId = " + catalogID
+				+ "where " + colWhere + "= " + catalogID
 				+ " ORDER BY " + colOrder 
 				+ " DESC LIMIT " + top;
 		
@@ -43,5 +43,4 @@ public class VideoDaoImpl implements VideoDao{
 		
 		return videoList;
 	}
-
 }

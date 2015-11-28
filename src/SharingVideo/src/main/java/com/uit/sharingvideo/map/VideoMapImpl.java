@@ -13,7 +13,8 @@ public class VideoMapImpl implements VideoMap{
 	}
 
 	@Override
-	public List<Video> getTopVideoByCatalog(Integer catalogID, int top, String colOrder){
-		return con.Connect_VideoService().getTopVideoByCatalog(catalogID, top, colOrder);
+
+	public List<Video> getTopVideo(String colWhere, Integer catalogID, int top, String colOrder){
+		return con.Connect_VideoService().getTopVideo(colWhere, catalogID, top, colOrder);
 	}
 }
