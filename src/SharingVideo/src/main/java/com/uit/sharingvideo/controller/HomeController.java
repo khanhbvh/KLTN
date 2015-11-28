@@ -1,51 +1,38 @@
 package com.uit.sharingvideo.controller;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.uit.sharingvideo.map.LinkMpdMap;
+import com.uit.sharingvideo.domain.Video;
+import com.uit.sharingvideo.map.VideoMap;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
-	/*
-	 * @Autowired CommentService commentService;
-	 */
-	/*
-	 * @Autowired LinkMpdService linkService;
-	 */
+	
 	@Autowired
-	LinkMpdMap linkMpdMap;
+	VideoMap videoMap;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
-	public String home(Locale locale) {
-		return "home/home";
+	public ModelAndView home(Locale locale) {
+		List<Video> videoList = videoMap.getVideoListByCatalog(1);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("videoList", videoList);
+		
+		return new ModelAndView("home/home", "map", map);
 	}
-
-	// @RequestMapping(value = "/", method = RequestMethod.GET)
-	// public String home(Locale locale, Model model) {
-	// ExecuteComandToFormatVideo test = new ExecuteComandToFormatVideo();
-	// String path;
-	// /*try {
-	// test.getMpd("vd2");
-	// } catch (InterruptedException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	// path = test.getFileMpd("vd2");*/
-	// path = "/resources/video/vd2/input_dash.mpd";
-	// model.addAttribute("path", path);
-	//
-	// return "home";
-	// }
 }

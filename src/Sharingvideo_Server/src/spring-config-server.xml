@@ -18,51 +18,49 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 <bean id="test2" class="test.testImpl2" />
 <bean id="linkMpdService" class="com.uit.sharingvideo.services.LinkMpdServiceImpl" />
 <bean id="commentService" class="com.uit.sharingvideo.services.CommentServiceImpl" />
+<bean id="videoService" class="com.uit.sharingvideo.services.VideoServiceImpl" />
 <bean id="uploadService" class="com.uit.sharingvideo.services.UploadServiceImpl" />
 
 <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
-<property name="serviceName" value="test" />
-<property name="service" ref="test" />
-<property name="serviceInterface" value="test.test"/>
-<property name="registryPort" value="1099" />
+	<property name="serviceName" value="test" />
+	<property name="service" ref="test" />
+	<property name="serviceInterface" value="test.test"/>
+	<property name="registryPort" value="1099" />
 </bean> 
+
 <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
-<property name="serviceName" value="test2" />
-<property name="service" ref="test2" />
-<property name="serviceInterface" value="test.test2"/>
-<property name="registryPort" value="1099" />
+	<property name="serviceName" value="test2" />
+	<property name="service" ref="test2" />
+	<property name="serviceInterface" value="test.test2"/>
+	<property name="registryPort" value="1099" />
 </bean>
 
 <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
-<property name="serviceName" value="linkMpdService" />
-<property name="service" ref="linkMpdService" />
-<property name="serviceInterface" value="com.uit.sharingvideo.services.LinkMpdService"/>
-<property name="registryPort" value="1099" />
+	<property name="serviceName" value="linkMpdService" />
+	<property name="service" ref="linkMpdService" />
+	<property name="serviceInterface" value="com.uit.sharingvideo.services.LinkMpdService"/>
+	<property name="registryPort" value="1099" />
 </bean>
 
 <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
-<property name="serviceName" value="commentService" />
-<property name="service" ref="commentService" />
-<property name="serviceInterface" value="com.uit.sharingvideo.services.CommentService"/>
-<property name="registryPort" value="1099" />
+	<property name="serviceName" value="commentService" />
+	<property name="service" ref="commentService" />
+	<property name="serviceInterface" value="com.uit.sharingvideo.services.CommentService"/>
+	<property name="registryPort" value="1099" />
 </bean>
 
 <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
-<property name="serviceName" value="uploadService" />
-<property name="service" ref="uploadService" />
-<property name="serviceInterface" value="com.uit.sharingvideo.services.UploadService"/>
-<property name="registryPort" value="1099" />
+	<property name="serviceName" value="uploadService" />
+	<property name="service" ref="uploadService" />
+	<property name="serviceInterface" value="com.uit.sharingvideo.services.UploadService"/>
+	<property name="registryPort" value="1099" />
 </bean>
 
-<!--  <bean id="dataSource"  
-  				class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/sharingvideodb"/>
-		<property name="username" value="root" />
-		<property name="password" value="1234"/>
-	</bean>
- 	
-<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
-        <property name="dataSource"><ref bean="dataSource" /></property> 
- </bean>  -->
+<bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+	<property name="serviceName" value="videoService" />
+	<property name="service" ref="videoService" />
+	<property name="serviceInterface" value="com.uit.sharingvideo.services.VideoService"/>
+	<property name="registryPort" value="1099" />
+</bean>
+
 </beans>

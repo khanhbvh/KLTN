@@ -1,3 +1,4 @@
+
 package com.uit.sharingvideo.map;
 
 import org.springframework.context.ApplicationContext;
@@ -5,7 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.uit.sharingvideo.services.CommentService;
 import com.uit.sharingvideo.services.LinkMpdService;
-import com.uit.sharingvideo.encode.*;
+import com.uit.sharingvideo.services.UploadService;
+import com.uit.sharingvideo.services.VideoService;
 
 import test.test;
 import test.test2;
@@ -48,25 +50,11 @@ public class Connect {
 		UploadService uploadService = (UploadService)context.getBean("uploadService");
 		return uploadService;
 	}
-/*	public CommentService Connect_CommentService()
+	
+	public VideoService Connect_VideoService()
 	{
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config-client.xml");
-		CommentService commentService = (CommentService)context.getBean("CommentService");
-		return commentService;
+		ApplicationContext context = new ClassPathXmlApplicationContext(CONFIG_FILE);
+		VideoService videoService = (VideoService)context.getBean("videoService");
+		return videoService;
 	}
-	
-	
-	public CommentService Connect_CommentService()
-	{
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config-client.xml");
-		CommentService commentService = (CommentService)context.getBean("CommentService");
-		return commentService;
-	}
-	
-	public CommentService Connect_CommentService()
-	{
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config-client.xml");
-		CommentService commentService = (CommentService)context.getBean("CommentService");
-		return commentService;
-	}*/
 }
