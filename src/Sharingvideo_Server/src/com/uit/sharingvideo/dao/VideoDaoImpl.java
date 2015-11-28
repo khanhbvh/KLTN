@@ -43,4 +43,19 @@ public class VideoDaoImpl implements VideoDao{
 		
 		return videoList;
 	}
+
+	@Override
+	public List<Video> getVideos(int startRecord, int numGet, String colOrder) {
+		List<Video> videoList = new ArrayList<Video>();
+		
+		String sql = "select * "
+				+ "from video "
+				+ " ORDER BY " + colOrder 
+				+ " DESC LIMIT " + startRecord + ", " + numGet;
+		
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		videoList = jdbcTemplate.query(sql, new VideoRowMapper());
+		
+		return videoList;
+	}
 }
