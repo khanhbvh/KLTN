@@ -21,11 +21,12 @@ public class ShowsController {
 	
 	@RequestMapping(value={"/",""},method=RequestMethod.GET)
 	public ModelAndView shows() { 
-		List<Video> popShowList = videoMap.getTopVideo("CategoryId", 4, 6, "NumView");
-		List<Video> vietShowList = videoMap.getTopVideo("TypeId", 9, 6, "NumView");
-		List<Video> usShowList = videoMap.getTopVideo("TypeId", 10, 6, "NumLike");
-		List<Video> indiaShowList = videoMap.getTopVideo("TypeId", 12, 6, "NumView");
-		List<Video> thaiShowList = videoMap.getTopVideo("TypeId", 13, 6, "NumView");
+		List<Video> popShowList = videoMap.getTopVideo("CategoryId", 8, 6, "NumView");
+		
+		List<Video> vietShowList = videoMap.getTopVideoByCatCountry("CategoryId", 8, "CountryId", 1, 6, "NumView");
+		List<Video> usShowList = videoMap.getTopVideoByCatCountry("CategoryId", 8, "CountryId", 2, 6, "NumView");
+		List<Video> indiaShowList = videoMap.getTopVideoByCatCountry("CategoryId", 8, "CountryId", 4, 6, "NumView");
+		List<Video> thaiShowList = videoMap.getTopVideoByCatCountry("CategoryId", 8, "CountryId", 5, 6, "NumView");
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("popShowList", popShowList);

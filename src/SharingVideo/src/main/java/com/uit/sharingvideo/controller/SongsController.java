@@ -21,10 +21,10 @@ public class SongsController {
 	
 	@RequestMapping(value={"/",""},method=RequestMethod.GET)
 	public ModelAndView songs() { 
-		List<Video> newestVideoList = videoMap.getTopVideo("CategoryId", 3, 6, "DateCreate");
-		List<Video> popVideoList = videoMap.getTopVideo("TypeId", 6, 6, "NumLike");
-		List<Video> hiphopVideoList = videoMap.getTopVideo("TypeId", 7, 6, "NumView");
-		List<Video> jazzVideoList = videoMap.getTopVideo("TypeId", 8, 6, "NumView");
+		List<Video> newestVideoList = videoMap.getTopVideo("CategoryId", 9, 6, "DateCreate");
+		List<Video> popVideoList = videoMap.getTopVideo("TypeId", 28, 6, "NumLike");
+		List<Video> hiphopVideoList = videoMap.getTopVideo("TypeId", 29, 6, "NumView");
+		List<Video> jazzVideoList = videoMap.getTopVideo("TypeId", 30, 6, "NumView");
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("newestVideoList", newestVideoList);

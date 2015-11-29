@@ -24,9 +24,9 @@ public class NewsController {
 	 */
 	@RequestMapping(value={"/",""},method=RequestMethod.GET)
 	public ModelAndView news() { 
-		List<Video> topVideoList = videoMap.getTopVideo("CategoryId", 2, 2, "NumLike");
-		List<Video> newestVideoList = videoMap.getTopVideo("CategoryId", 2, 1, "DateCreate");
-		List<Video> popuVideoList = videoMap.getTopVideo("CategoryId", 2, 10, "NumView");
+		List<Video> topVideoList = videoMap.getTopVideo("CategoryId", 7, 2, "NumLike");
+		List<Video> newestVideoList = videoMap.getTopVideo("CategoryId", 7, 2, "DateCreate");
+		List<Video> popuVideoList = videoMap.getTopVideo("CategoryId", 7, 5, "NumView");
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("topVideoList", topVideoList);

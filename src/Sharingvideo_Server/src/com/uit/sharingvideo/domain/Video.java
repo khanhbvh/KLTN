@@ -19,6 +19,14 @@ public class Video implements Serializable{
 	private Category category;
 	private Type type;
 	private User user;
+	private Country country;
+	
+	public Country getCountry() {
+		return country;
+	}
+	public void setCountry(Country country) {
+		this.country = country;
+	}
 	
 	public Category getCategory() {
 		return category;

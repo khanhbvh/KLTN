@@ -18,7 +18,7 @@
             <li><a href="#" class="menu1"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Phim<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
             <ul class="cl-effect-2">
                 <li><a href="<c:url value='/movies/vietnam'/>">Việt nam</a></li>
-                <li><a href="<c:url value='/movies'/>">Âu - Mỹ</a></li>
+                <li><a href="<c:url value='/movies/uk'/>">Âu - Mỹ</a></li>
                 <li><a href="<c:url value='/movies'/>">Ấn độ</a></li>
             </ul>
             <!-- script-for-menu -->
@@ -31,10 +31,10 @@
             </script>
             <li><a href="#" class="menu"><span class="glyphicon glyphicon-film glyphicon-king" aria-hidden="true"></span>Thể Thao<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
             <ul class="cl-effect-1">
-                <li><a href="<c:url value='/sports'/>">Bóng đá</a></li>
-                <li><a href="<c:url value='/sports'/>">Cờ vua</a></li>
-                <li><a href="<c:url value='/sports'/>">Cầu lông</a></li>
-                <li><a href="<c:url value='/sports'/>">Bơi lội</a></li>
+                <li><a href="<c:url value='/sports/football'/>">Bóng đá</a></li>
+                <li><a href="<c:url value='/sports/chess'/>">Cờ vua</a></li>
+                <li><a href="<c:url value='/sports/voleyball'/>">Bóng chuyền</a></li>
+                <li><a href="<c:url value='/sports/swimming'/>">Bơi lội</a></li>
             </ul>
             <!-- script-for-menu -->
            <script>
@@ -65,7 +65,7 @@
                 </ul>
             </div>
             <div class="copyright">
-                <p>Copyright © 2015 My Play. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+                <p>Copyright © 2015 My Play. All Rights Reserved | Design by <a href="https://daa.uit.edu.vn/">UIT Student</a></p>
             </div>
         </div>
     </div>

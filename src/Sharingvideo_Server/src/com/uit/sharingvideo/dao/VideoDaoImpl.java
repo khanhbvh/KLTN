@@ -43,7 +43,7 @@ public class VideoDaoImpl implements VideoDao{
 		
 		return videoList;
 	}
-
+	
 	@Override
 	public List<Video> getVideos(int startRecord, int numGet, String colOrder) {
 		List<Video> videoList = new ArrayList<Video>();
@@ -52,6 +52,40 @@ public class VideoDaoImpl implements VideoDao{
 				+ "from video "
 				+ " ORDER BY " + colOrder 
 				+ " DESC LIMIT " + startRecord + ", " + numGet;
+		
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		videoList = jdbcTemplate.query(sql, new VideoRowMapper());
+		
+		return videoList;
+	}
+	
+	@Override
+	public List<Video> getVideosByCol(String colWhere, int Id, int startRecord, int numGet, String colOrder){
+		List<Video> videoList = new ArrayList<Video>();
+		
+		String sql = "select * "
+				+ "from video "
+				+ "where " + colWhere + "= " + Id
+				+ " ORDER BY " + colOrder 
+				+ " DESC LIMIT " + startRecord + ", " + numGet;
+		
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		videoList = jdbcTemplate.query(sql, new VideoRowMapper());
+		
+		return videoList;
+	}
+	
+	public List<Video> getTopVideoByCatCountry(String colWhere, Integer catalogID, 
+			String countryCol, Integer coId, 
+			int top, String colOrder){
+		List<Video> videoList = new ArrayList<Video>();
+		
+		String sql = "select * "
+				+ "from video "
+				+ "where " + colWhere + "= " + catalogID
+				+ " AND " + countryCol + " = " + coId
+				+ " ORDER BY " + colOrder 
+				+ " DESC LIMIT " + top;
 		
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		videoList = jdbcTemplate.query(sql, new VideoRowMapper());

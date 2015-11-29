@@ -23,4 +23,14 @@ public class VideoMapImpl implements VideoMap{
 		return con.Connect_VideoService().getTopVideo(colWhere, catalogID, top, colOrder);
 	}
 
+	@Override
+	public List<Video> getVideosByCol(String colWhere, int Id, int startRecord, int numGet, String colOrder) {
+		return con.Connect_VideoService().getVideosByCol(colWhere, Id, startRecord, numGet, colOrder);
+	}
+
+	public List<Video> getTopVideoByCatCountry(String colWhere, Integer catalogID, 
+			String countryCol, Integer coId, 
+			int top, String colOrder){
+		return con.Connect_VideoService().getTopVideoByCatCountry(colWhere, catalogID, countryCol, coId, top, colOrder);
+	}
 }

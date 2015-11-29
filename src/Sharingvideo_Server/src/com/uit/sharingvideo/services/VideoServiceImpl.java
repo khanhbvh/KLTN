@@ -23,5 +23,14 @@ public class VideoServiceImpl implements VideoService{
 	public List<Video> getVideos(int startRecord, int numGet, String colOrder) {
 		return videodao.getVideos(startRecord, numGet, colOrder);
 	}
-
+	
+	public List<Video> getVideosByCol(String colWhere, int Id, int startRecord, int numGet, String colOrder){
+		return videodao.getVideosByCol(colWhere, Id, startRecord, numGet, colOrder);
+	}
+	
+	public List<Video> getTopVideoByCatCountry(String colWhere, Integer catalogID, 
+			String countryCol, Integer coId, 
+			int top, String colOrder){
+		return videodao.getTopVideoByCatCountry(colWhere, catalogID, countryCol, coId, top, colOrder);
+	}
 }
