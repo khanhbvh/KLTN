@@ -71,4 +71,6 @@ public class HomeController {
 		  
 		return new ModelAndView("home/home", "map", map);
 	}
+	
+	
 }

@@ -14,28 +14,43 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 
+<script src="<c:url value="/resources/core/js/jquery.1.10.2.min.js" />"></script>
+<script src="<c:url value="/resources/core/js/bootstrap.min.js" />"></script>
+<script src="<c:url value="/resources/core/js/jquery.js" />"></script>
+
 <script type="text/javascript"
 	src="<c:url value="/resources/js/jquery-1.11.1.min.js" />">
-	
 </script>
+
 <script type="application/x-javascript">
-	
-	
-	
-	 
-			addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-		
-
-
-
+	addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 </script>
 <script type="text/javascript"
-	src="<c:url value="/resources/js/bootstrap.min.js" />">
-	
+	src="<c:url value="/resources/js/bootstrap.min.js" />">	
 </script>
+
+<script>
+	function sendAjax() {
+		var params = 'thienld';
+		var json = {
+			"params" : params
+		};
+
+		$.ajax({
+			url : "close/doActionBefClose",
+			data : JSON.stringify(json),
+			type : "POST",
+			beforeSend : function(xhr) {
+				xhr.setRequestHeader("Accept", "application/json");
+				xhr.setRequestHeader("Content-Type", "application/json");
+			}
+		});
+	}
+</script>
+
 </head>
 
-<body>
+<body onbeforeunload="sendAjax()">
 	<!-- header decorator -->
 	<%@ include file="/WEB-INF/views/includes/header.jsp"%>
 
