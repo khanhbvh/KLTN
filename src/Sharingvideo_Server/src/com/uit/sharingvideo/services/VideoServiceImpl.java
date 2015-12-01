@@ -33,4 +33,5 @@ public class VideoServiceImpl implements VideoService{
 			int top, String colOrder){
 		return videodao.getTopVideoByCatCountry(colWhere, catalogID, countryCol, coId, top, colOrder);
 	}
+
 }

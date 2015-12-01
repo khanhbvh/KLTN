@@ -34,5 +34,6 @@
 	<beans:bean id="commentMap" class="com.uit.sharingvideo.map.CommentMapImpl" />
 	<beans:bean id="uploadMap" class="com.uit.sharingvideo.map.UploadMapImpl" />
 	<beans:bean id="videoMap" class="com.uit.sharingvideo.map.VideoMapImpl" />
+	<beans:bean id="recommendMap" class="com.uit.sharingvideo.map.RecommendMapImpl" />
 
 </beans:beans>

@@ -8,23 +8,25 @@
 	<div class="container">
 		<div class="upload-grids">
 			<div class="upload-right">
-			<form method="POST" action="upload/uploadFile" enctype="multipart/form-data">
-				<div class="upload-file">
-					<div class="services-icon">
-						<span class="glyphicon glyphicon-open" aria-hidden="true"></span>
+				<form method="POST" action="upload/uploadFile"
+					enctype="multipart/form-data">
+					<div class="upload-file">
+						<div class="services-icon">
+							<span class="glyphicon glyphicon-open" aria-hidden="true"></span>
+						</div>
+
+						<input type="file" name="file"><br />
+
+						<!-- </form> -->
+						<!-- <input type="file" value="Choose file.."> -->
 					</div>
-					
-						<input type="file" name="file"><br /> 
-						
-					<!-- </form> -->
-					<!-- <input type="file" value="Choose file.."> -->
-				</div>
-				<div class="upload-info">
-					<h5>Select files to upload</h5>
-					<span>or</span>
-					<p>Drag and drop files</p>
-				</div>
-				<input type="submit" value="Upload"> Press here to upload the file!
+					<div class="upload-info">
+						<h5>Select files to upload</h5>
+						<span>or</span>
+						<p>Drag and drop files</p>
+					</div>
+					<input type="submit" value="Upload"> Press here to upload
+					the file!
 				</form>
 			</div>
 			<div class="upload-right-bottom-grids">

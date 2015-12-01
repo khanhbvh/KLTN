@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.uit.sharingvideo.domain.Video;
+import com.uit.sharingvideo.map.RecommendMap;
 import com.uit.sharingvideo.map.VideoMap;
 
 /**
@@ -22,6 +24,9 @@ public class HomeController {
 	
 	@Autowired
 	VideoMap videoMap;
+	
+	@Autowired
+	RecommendMap recommendMap;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -60,7 +65,11 @@ public class HomeController {
 		map.put("sportVideoList1", sportVideoList1);
 		map.put("sportVideoList2", sportVideoList2);
 		
-		
+		List<Integer> recommendations = recommendMap.getRecommendList(3, 52);
+		for (int i = 0; i < recommendations.size(); i++) {
+			System.out.println(recommendations.get(i) + " ");
+		}
+		  
 		return new ModelAndView("home/home", "map", map);
 	}
 }

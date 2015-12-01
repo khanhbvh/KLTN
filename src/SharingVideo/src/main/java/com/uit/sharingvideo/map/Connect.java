@@ -6,6 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.uit.sharingvideo.services.CommentService;
 import com.uit.sharingvideo.services.LinkMpdService;
+import com.uit.sharingvideo.services.RecommendService;
 import com.uit.sharingvideo.services.UploadService;
 import com.uit.sharingvideo.services.VideoService;
 
@@ -56,5 +57,12 @@ public class Connect {
 		ApplicationContext context = new ClassPathXmlApplicationContext(CONFIG_FILE);
 		VideoService videoService = (VideoService)context.getBean("videoService");
 		return videoService;
+	}
+	
+	public RecommendService Connect_RecommendService()
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext(CONFIG_FILE);
+		RecommendService recommendService = (RecommendService)context.getBean("recommendService");
+		return recommendService;
 	}
 }

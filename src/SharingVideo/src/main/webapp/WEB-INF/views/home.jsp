@@ -69,7 +69,8 @@
 
 <!-- Load the videojs-contrib-dash stylesheet anywhere -->
 <%--  <link href="<c:url value="/resources/css/videojs/video-js-dash.css" />" rel="stylesheet"> --%>
-<link href="<c:url value="/resources/css/videojs/video-js.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/videojs/video-js.css" />"
+	rel="stylesheet">
 <!-- Load the videojs-contrib-dash script *after* both other projects -->
 <script src="<c:url value="/resources/js/videojs/videojs-dash.js" />"></script>
 <!-- end Thien -->
@@ -88,9 +89,9 @@
 			id="others" value="<c:url value="${path.linkmpdChrFfIe}"/>" />
 		<video id="videoplayer" class="video-js vjs-default-skin" controls
 			width="1000px" height="565px" preload="auto">
-			 <source id="browser" src="${path.linkmpdForEgle}"
-				type='application/dash+xml'> 
-				
+			<source id="browser" src="${path.linkmpdForEgle}"
+				type='application/dash+xml'>
+
 			<!-- <source id="browser" type='application/dash+xml'> -->
 			<%-- <source src="<c:url value="${path.linkmpdChrFfIe}" />" type='application/dash+xml'> --%>
 		</video>

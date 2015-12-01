@@ -3,6 +3,7 @@ package com.uit.sharingvideo.dao;
 import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import com.uit.sharingvideo.domain.Video;
 import com.uit.sharingvideo.jdbc.VideoRowMapper;

@@ -3,7 +3,6 @@ package com.uit.sharingvideo.dao;
 import java.sql.SQLException;
 
 import javax.sql.DataSource;
-
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 public class ConnectDataBase {
@@ -18,7 +17,6 @@ public class ConnectDataBase {
 	     dataSource.setUrl("jdbc:mysql://localhost:3306/sharingvideodb");
 	     dataSource.setUsername("root");
 	     dataSource.setPassword("1234");
-	     System.out.println(dataSource);
 	     return dataSource;
 	}
 }

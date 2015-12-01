@@ -19,6 +19,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 <bean id="linkMpdService" class="com.uit.sharingvideo.services.LinkMpdServiceImpl" />
 <bean id="commentService" class="com.uit.sharingvideo.services.CommentServiceImpl" />
 <bean id="videoService" class="com.uit.sharingvideo.services.VideoServiceImpl" />
+<bean id="recommendService" class="com.uit.sharingvideo.services.RecommendServiceImpl" />
 <bean id="uploadService" class="com.uit.sharingvideo.services.UploadServiceImpl" />
 
 <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
@@ -63,4 +64,10 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<property name="registryPort" value="1099" />
 </bean>
 
+<bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+	<property name="serviceName" value="recommendService" />
+	<property name="service" ref="recommendService" />
+	<property name="serviceInterface" value="com.uit.sharingvideo.services.RecommendService"/>
+	<property name="registryPort" value="1099" />
+</bean>
 </beans>
