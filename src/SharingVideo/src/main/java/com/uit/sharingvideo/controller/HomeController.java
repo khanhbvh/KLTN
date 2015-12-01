@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,11 +34,11 @@ public class HomeController {
 	public ModelAndView home(Locale locale) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		
-		// Danh sách các video mới nhất
+		// Danh sÃ¡ch cÃ¡c video má»›i nháº¥t
 		List<Video> recentVideoList = videoMap.getVideos(0, 6, "DateCreate");
 		map.put("recentVideoList", recentVideoList);
 		
-		// Danh sách các video được xem nhiều nhất
+		// Danh sÃ¡ch cÃ¡c video Ä‘Æ°á»£c xem nhiá»�u nháº¥t
 		List<Video> viewMostVideoList1 = videoMap.getVideos(0, 4, "NumView");
 		List<Video> viewMostVideoList2 = videoMap.getVideos(4, 4, "NumView");
 		List<Video> viewMostVideoList3 = videoMap.getVideos(8, 4, "NumView");
@@ -49,7 +48,7 @@ public class HomeController {
 		map.put("viewMostVideoList3", viewMostVideoList3);
 		map.put("viewMostVideoList4", viewMostVideoList4);
 		
-		// Danh sách các video Việt Nam
+		// Danh sÃ¡ch cÃ¡c video Viá»‡t Nam
 		List<Video> vietVideoList1 = videoMap.getVideosByCol("CountryId", 1, 0, 4, "NumView");
 		List<Video> vietVideoList2 = videoMap.getVideosByCol("CountryId", 1, 4, 4, "NumView");
 		List<Video> vietVideoList3 = videoMap.getVideosByCol("CountryId", 1, 8, 4, "NumView");
@@ -59,7 +58,7 @@ public class HomeController {
 		map.put("vietVideoList3", vietVideoList3);
 		map.put("vietVideoList4", vietVideoList4);
 		
-		// Danh sách các video Thể Thao
+		// Danh sÃ¡ch cÃ¡c video Thá»ƒ Thao
 		List<Video> sportVideoList1 = videoMap.getVideosByCol("CategoryId", 6, 0, 4, "NumLike");
 		List<Video> sportVideoList2 = videoMap.getVideosByCol("CategoryId", 6, 4, 4, "NumLike");
 		map.put("sportVideoList1", sportVideoList1);
