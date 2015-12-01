@@ -15,4 +15,5 @@ public class AboutController {
 	public ModelAndView about() { 
 		return new ModelAndView("about/about"); 
 	}
+	
 }
