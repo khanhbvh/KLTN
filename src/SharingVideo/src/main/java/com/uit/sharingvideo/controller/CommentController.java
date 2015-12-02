@@ -40,4 +40,14 @@ public class CommentController {
     {
 		commentMap.insertData(comment);
     }
+	
+	/* @MessageMapping("/simplemessages")
+	    @SendTo("/topic/simplemessagesresponse")
+	    public Comment processMessageFromClient(Comment comment,
+	            Principal principal) throws Exception {
+	        Thread.sleep(3000);
+	        //comment.setCreated(principal.getName()); 
+	        commentMap.insertData(comment);
+	        return comment;
+	    }*/
 }

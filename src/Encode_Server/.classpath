@@ -17,7 +17,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -27,20 +27,21 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/aopalliance-.jar"/>
-	<classpathentry kind="lib" path="lib/log4j.jar"/>
-	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.9.jar"/>
-	<classpathentry kind="lib" path="lib/org-apache-commons-logging.jar"/>
-	<classpathentry kind="lib" path="lib/org.springframework.aop_3.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/org.springframework.asm_3.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/org.springframework.beans_3.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/org.springframework.context_3.1.1.release.jar"/>
-	<classpathentry kind="lib" path="lib/org.springframework.context.support_3.1.1.release.jar"/>
-	<classpathentry kind="lib" path="lib/org.springframework.core_3.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/org.springframework.expression_3.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/org.springframework.jdbc_3.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/sitemesh-2.4.2.jar"/>
-	<classpathentry kind="lib" path="lib/spring-tx-3.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-webmvc-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/KLTN/doan/src/Sharingvideo_Server/lib/aopalliance-.jar"/>
+	<classpathentry kind="lib" path="E:/KLTN/doan/src/Sharingvideo_Server/lib/commons-math3-3.2.jar"/>
+	<classpathentry kind="lib" path="E:/KLTN/doan/src/Sharingvideo_Server/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="E:/KLTN/doan/src/Sharingvideo_Server/lib/mysql-connector-java-5.1.9.jar"/>
+	<classpathentry kind="lib" path="E:/KLTN/doan/src/Sharingvideo_Server/lib/org.springframework.jdbc_3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/KLTN/doan/src/Sharingvideo_Server/lib/org-apache-commons-logging.jar"/>
+	<classpathentry kind="lib" path="E:/KLTN/doan/src/Sharingvideo_Server/lib/sitemesh-2.4.2.jar"/>
+	<classpathentry kind="lib" path="lib4.0/spring-aop-4.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib4.0/spring-asm-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib4.0/spring-beans-4.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib4.0/spring-context-4.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib4.0/spring-context-support-4.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib4.0/spring-core-4.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib4.0/spring-expression-4.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib4.0/spring-tx-4.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib4.0/spring-webmvc-4.0.0.RELEASE.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

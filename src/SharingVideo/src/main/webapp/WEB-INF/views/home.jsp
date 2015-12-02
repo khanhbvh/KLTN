@@ -185,7 +185,6 @@
 
 	<script>
 		display();
-
 		$(document).ready(function() {
 			$('#btnCancel').click(function(e) {
 				e.preventDefault();

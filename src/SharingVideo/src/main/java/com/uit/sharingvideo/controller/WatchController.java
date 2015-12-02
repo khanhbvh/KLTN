@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller("WatchController")
 @RequestMapping(value = "/watch")
 public class WatchController {
-	@RequestMapping(value = { "/", "/watch" })
+	@RequestMapping(value = { "", "/watch" })
 	public ModelAndView product(HttpServletRequest req){
 		String videoId = req.getParameter("id");
 		System.out.print(videoId);

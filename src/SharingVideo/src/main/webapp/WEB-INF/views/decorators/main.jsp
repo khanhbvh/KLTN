@@ -29,25 +29,6 @@
 	src="<c:url value="/resources/js/bootstrap.min.js" />">	
 </script>
 
-<script>
-	function sendAjax() {
-		var params = 'thienld';
-		var json = {
-			"params" : params
-		};
-
-		$.ajax({
-			url : "close/doActionBefClose",
-			data : JSON.stringify(json),
-			type : "POST",
-			beforeSend : function(xhr) {
-				xhr.setRequestHeader("Accept", "application/json");
-				xhr.setRequestHeader("Content-Type", "application/json");
-			}
-		});
-	}
-</script>
-
 </head>
 
 <body onbeforeunload="sendAjax()">

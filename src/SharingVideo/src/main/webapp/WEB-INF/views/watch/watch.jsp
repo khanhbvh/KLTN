@@ -12,6 +12,216 @@
 <script src="<c:url value="/resources/js/videojs/videojs-dash.js" />"></script>
 <script src="https://apis.google.com/js/plusone.js"></script>
 <!-- body decorator -->
+
+<script>
+	function sendAjax() {
+		var params = $('#dataVideo').val();
+
+		$.ajax({
+			url : "close/doActionBefCloseWatch",
+			data : params,
+			type : "POST",
+			beforeSend : function(xhr) {
+				xhr.setRequestHeader("Accept", "application/json");
+				xhr.setRequestHeader("Content-Type", "application/json");
+			}
+		});
+	}
+</script>
+
+<body onbeforeunload="sendAjax()">
+
+<div id="comments"></div>
+<div class="row">
+			<div class="col-lg-8 col-sm-8 col-xs-12" style="padding-top: 15px;">
+
+				<div class="media">
+
+					<a class="pull-left" href="#"> <img
+						class="media-object img-circle img-thumbnail"
+						src="<c:url value="/resources/core/image/guest.png" />" width="82"
+						alt="Generic placeholder image">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-8 col-sm-8 col-xs-12">
+				<hr>
+				<ul class="media-list comments" id="lstComment">
+				</ul>
+			</div>
+		</div>
+
+	<script>
+		display();
+		function display() {
+			$
+					.ajax({
+						url : "Comment/listComment",
+						type : "POST",
+						beforeSend : function(xhr) {
+							xhr.setRequestHeader("Accept", "application/json");
+							xhr.setRequestHeader("Content-Type",
+									"application/json");
+						},
+						success : function(data) {
+							var result = "";
+							$
+									.each(
+											data,
+											function(i, item) {
+												result += "<li class='media'>";
+												result += "<a class='pull-left' href='#'>";
+												result += "<img class='media-object img-circle img-thumbnail' src='<c:url value='/resources/core/image/guest.png' />' width='64' alt='Generic placeholder image'>";
+												result += "</a>"
+												result += "<div class='media-body'>";
+												result += "<h5 class='media-heading pull-left'>"
+														+ item.userId + "</h5>";
+												result += "<div class='comment-info pull-left'>";
+												result += "<div class='btn btn-default btn-xs'></i> Date: "
+														+ item.created
+														+ "</div>";
+												result += "</div>";
+												result += "<br class='clearfix'>";
+												result += "<p class='well'>"
+														+ item.content + "</p>";
+												result += "</div>";
+												result += "</li>";
+											});
+							$('#lstComment').html(result);
+							$('#content').val("");
+						},
+						error : function(e) {
+							alert("ERROR: Loi lay danh sach comment " + e);
+						},
+					});
+		}
+	</script>
+
+<%-- <script src="<c:url value="/resources/scripts/knockout-3.0.0.js"/>"></script>
+  <c:url value="/simplemessages" var="socketDest" />
+  <script type="text/javascript">
+            var stompClient = null;
+
+            $(document).ready(function() {
+                $("#disconnect").prop('disabled', true);
+                $("#txtSendMessage").prop('disabled', false);
+                $("#sendMessage").prop('disabled', false);
+
+                //Also all text in server message should be empty
+                $("#txtSendMessage").val("");
+                $(".alert").hide();
+                // Event handler: Connect button
+                $("#formAlert").slideUp(400);
+                    connect();
+               
+                $(".alert").find(".close").on("click", function(e) {
+                    e.stopPropagation();
+
+                    e.preventDefault();
+
+                    // Hide this specific Alert
+                    $(this).closest(".alert").slideUp(400);
+
+                    // Focus on the Send Message textfield
+                    $("#txtSendMessage").select();
+                    $("#txtSendMessage").focus();
+                });
+
+                // Event handler: Send button
+                $("#sendMessage").on("click", function(e) {
+
+                    // Find the input text element for the server message
+                    var messageForServer = $("#txtSendMessage").val();
+
+                    if (messageForServer === "") {
+
+                        // If message is empty prevent submission and show the alert
+                        e.preventDefault();
+                        $("#formAlert").slideDown(400);
+
+                    } else {
+
+                        // Message is not empty so send to server
+                        $("#formAlert").slideUp(400);
+
+                        // Show a please wait alert
+                        $("#formInfoAlert").slideDown(400);
+
+                        sendMessageToServer(messageForServer);
+                    }
+                });
+            });
+
+            function setConnected(connected) {
+                // and input widgets
+                $("#connect").prop('disabled', connected);
+                $("#disconnect").prop('disabled', !connected);
+                $("#sendMessage").prop('disabled', !connected);
+                $("#txtSendMessage").prop('disabled', !connected)
+            }
+
+            function connect() {
+                $("#response").empty();
+                $("#txtSendMessage").val("");
+                $("#txtSendMessage").focus();
+                $("#txtSendMessage").select();
+                var socket = new SockJS('${socketDest}');
+                stompClient = Stomp.over(socket);
+                stompClient.connect('', '', function(frame) {
+                    setConnected(true);
+                    stompClient.subscribe("/topic/simplemessagesresponse", function(servermessage) {//Callback when server responds
+                        showServerBroadcast(JSON.parse(servermessage.body).messageContent, false);
+                        //Server responded so hide the info alert
+                        $("#formInfoAlert").slideUp(400);
+                        //Also all text in server message input field should be empty
+                        $("#txtSendMessage").val("");
+                        $("#txtSendMessage").focus();
+                        $("#txtSendMessage").select();
+                    });
+                });
+            }
+
+            function sendMessageToServer(messageForServer) {
+                stompClient.send("/app/simplemessages", {}, JSON.stringify({
+                    'content' : messageForServer,
+                    'videoId' : 1,
+    				'userId' : 1
+                }));
+            }
+
+            function showServerBroadcast(servermessage, localMessage) {
+                var decoded = $("<div/>").html(servermessage).text();
+
+                var tmp = "";
+                var serverResponse = document.getElementById("response");
+                var p = document.createElement('p');
+                p.style.wordWrap = 'break-word';
+
+                if (localMessage) {
+                    p.style.color = '#006600';
+                    tmp = "<span class='glyphicon glyphicon-dashboard'></span> " + decoded + " (Browser time:" + getCurrentDateTime() + ")";
+                } else {
+                    p.style.color = '#8A0808';
+                    tmp = "<span class='glyphicon glyphicon-arrow-right'></span> " + decoded;
+                }
+                //Assigning the decoded HTML to the <p> element
+                p.innerHTML = tmp;
+                serverResponse.appendChild(p);
+            }
+
+            function getCurrentDateTime() {
+                var date = new Date();
+                var n = date.toDateString();
+                var time = date.toLocaleTimeString();
+                return n + " @ " + time;
+            }
+        </script>
+ --%>
+ 
+ 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 	<div class="show-top-grids">
@@ -21,7 +231,7 @@
 					<h3>name</h3>
 				</div>
 				<div class="video-grid">
-					<input type="hidden" id="edge"
+					<input type="hidden" id="dataVideo" // lay cai nay nha o
 						value="<c:url value="${path.linkmpdForEgle}"/>" /> <input
 						type="hidden" id="others"
 						value="<c:url value="${path.linkmpdChrFfIe}"/>" />
@@ -67,6 +277,19 @@
 						var myPlayer = videojs('videoplayer');
 					</script>
 				</div>
+				
+				<div class="media-body">
+
+						<form id="insert-form">
+							<div class="form-group">
+								<textarea id="content" class="form-control" rows="3"></textarea>
+							</div>
+							<div class="form-group text-right">
+								<button type="submit" id="btnCancel" class="btn btn-default">Cancel</button>
+								<button type="submit" id="btnSave" class="btn btn-primary">Submit</button>
+							</div>
+						</form>
+					</div>
 			</div>
 			<div class="song-grid-right">
 				<div class="share">
@@ -165,92 +388,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="media-grids">
-					<div class="media">
-						<h5>Tom Brown</h5>
-						<div class="media-left">
-							<a href="#"> </a>
-						</div>
-						<div class="media-body">
-							<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet
-								ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex
-								pretium hendrerit</p>
-							<span>View all posts by :<a href="#"> Admin </a></span>
-						</div>
-					</div>
-					<div class="media">
-						<h5>Mark Johnson</h5>
-						<div class="media-left">
-							<a href="#"> </a>
-						</div>
-						<div class="media-body">
-							<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet
-								ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex
-								pretium hendrerit</p>
-							<span>View all posts by :<a href="#"> Admin </a></span>
-						</div>
-					</div>
-					<div class="media">
-						<h5>Steven Smith</h5>
-						<div class="media-left">
-							<a href="#"> </a>
-						</div>
-						<div class="media-body">
-							<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet
-								ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex
-								pretium hendrerit</p>
-							<span>View all posts by :<a href="#"> Admin </a></span>
-						</div>
-					</div>
-					<div class="media">
-						<h5>Marry Johne</h5>
-						<div class="media-left">
-							<a href="#"> </a>
-						</div>
-						<div class="media-body">
-							<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet
-								ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex
-								pretium hendrerit</p>
-							<span>View all posts by :<a href="#"> Admin </a></span>
-						</div>
-					</div>
-					<div class="media">
-						<h5>Mark Johnson</h5>
-						<div class="media-left">
-							<a href="#"> </a>
-						</div>
-						<div class="media-body">
-							<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet
-								ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex
-								pretium hendrerit</p>
-							<span>View all posts by :<a href="#"> Admin </a></span>
-						</div>
-					</div>
-					<div class="media">
-						<h5>Mark Johnson</h5>
-						<div class="media-left">
-							<a href="#"> </a>
-						</div>
-						<div class="media-body">
-							<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet
-								ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex
-								pretium hendrerit</p>
-							<span>View all posts by :<a href="#"> Admin </a></span>
-						</div>
-					</div>
-					<div class="media">
-						<h5>Peter Johnson</h5>
-						<div class="media-left">
-							<a href="#"> </a>
-						</div>
-						<div class="media-body">
-							<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet
-								ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex
-								pretium hendrerit</p>
-							<span>View all posts by :<a href="#"> Admin </a></span>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 		<div class="col-md-4 single-right">
@@ -431,3 +569,4 @@
 	<!-- footer decorator -->
 	<%@ include file="/WEB-INF/views/includes/footer.jsp"%>
 </div>
+</body>

@@ -14,4 +14,10 @@ public class LinkMpdServiceImpl implements LinkMpdService{
 		return link.getLink(name);
 	}
 
+	@Override
+	public void Update_Idle_Server(String server) {
+		link.Update_Idle_Server(server);
+		
+	}
+
 }
