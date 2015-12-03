@@ -70,4 +70,25 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<property name="serviceInterface" value="com.uit.sharingvideo.services.RecommendService"/>
 	<property name="registryPort" value="1099" />
 </bean>
+ 
+<!--client check server  -->
+ <!--<bean id="checkServer2" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+<property name="serviceUrl" value="rmi://192.168.1.2:1097/checkServerService"/>
+<property name="serviceInterface" value="com.uit.sharingvideo.checksv.CheckServerService"/>
+</bean>
+
+<bean id="storageService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+<property name="serviceUrl" value="rmi://localhost:1097/storageService"/>
+<property name="serviceInterface" value="com.uit.sharingvideo.checksv.CheckServerService"/>
+</bean> -->
+
+<!-- <bean id="checkServer2" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+<property name="serviceUrl" value="rmi://localhost:1097/checkServerService"/>
+<property name="serviceInterface" value="com.uit.sharingvideo.checksv.CheckServerService"/>
+</bean> -->
+
+<!-- <bean id="checkServer1" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+<property name="serviceUrl" value="rmi://192.168.1.2:1097/checkServerService"/>
+<property name="serviceInterface" value="com.uit.sharingvideo.checksv.CheckServerService"/>
+</bean> -->
 </beans>

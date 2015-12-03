@@ -14,12 +14,20 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 <!-- declare datasource bean -->
  
 <bean id="storageService" class="com.uit.sharingvideo.storage.StorageServiceImpl" />
+<bean id="checkServerService" class="com.uit.sharingvideo.checksv.CheckServerServiceImpl" />
 
 
 <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
 <property name="serviceName" value="storageService" />
 <property name="service" ref="storageService" />
 <property name="serviceInterface" value="com.uit.sharingvideo.storage.StorageService"/>
+<property name="registryPort" value="1097" />
+</bean>
+
+<bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+<property name="serviceName" value="checkServerService" />
+<property name="service" ref="checkServerService" />
+<property name="serviceInterface" value="com.uit.sharingvideo.checksv.CheckServerService"/>
 <property name="registryPort" value="1097" />
 </bean>
 

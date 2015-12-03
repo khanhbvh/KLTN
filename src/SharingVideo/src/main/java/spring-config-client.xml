@@ -10,15 +10,15 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
  
- <bean id="test" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+<!--  <bean id="test" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
 <property name="serviceUrl" value="rmi://localhost:1099/test"/>
 <property name="serviceInterface" value="test.test"/>
-</bean>
+</bean> -->
 
-<bean id="test2" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+<!-- <bean id="test2" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
 <property name="serviceUrl" value="rmi://localhost:1099/test2"/>
 <property name="serviceInterface" value="test.test2"/>
-</bean>
+</bean> -->
 
 <bean id="linkMpdService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
 <property name="serviceUrl" value="rmi://localhost:1099/linkMpdService"/>
